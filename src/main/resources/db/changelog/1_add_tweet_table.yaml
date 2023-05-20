@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0
+      author: chuck
+      changes:
+        - createTable:
+            tableName: tweet
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: message
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: up_votes
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: down_votes
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
