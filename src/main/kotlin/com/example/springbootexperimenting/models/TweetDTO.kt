@@ -3,7 +3,8 @@ package com.example.springbootexperimenting.models
 import com.example.springbootexperimenting.entities.Tweet
 import java.time.LocalDateTime
 
-data class TweetDTO(
+data class TweetRequest(val message: String)
+data class TweetResponse(
     val id: Long,
     val message: String,
     val upVotes: Int,
@@ -11,12 +12,8 @@ data class TweetDTO(
     val createdAt: LocalDateTime
 )
 
-fun TweetDTO.toEntity(): Tweet {
-    return Tweet(message = this.message)
-}
-
-fun Tweet.toDTO(): TweetDTO {
-    return TweetDTO(
+fun Tweet.toResponse(): TweetResponse {
+    return TweetResponse(
         id = this.id!!,
         message = this.message,
         upVotes = this.upVotes,
