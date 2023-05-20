@@ -2,6 +2,8 @@ package com.example.springbootexperimenting.controllers
 
 import com.example.springbootexperimenting.models.TweetRequest
 import com.example.springbootexperimenting.services.TweetService
+import jakarta.validation.Valid
+import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
@@ -20,9 +22,9 @@ class TweetController(private val tweetService: TweetService) {
     }
 
     @PostMapping("/")
-    fun createTweet(@RequestBody tweetRequest: TweetRequest): ResponseEntity<*> {
+    fun createTweet(@Valid @RequestBody tweetRequest: TweetRequest): ResponseEntity<*> {
         return ResponseEntity
-            .status(201)
+            .status(HttpStatus.CREATED)
             .body(tweetService.createTweet(tweetRequest))
     }
 }

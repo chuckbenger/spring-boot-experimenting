@@ -1,5 +1,6 @@
 package com.example.springbootexperimenting.services
 
+import com.example.springbootexperimenting.controllers.NotFoundException
 import com.example.springbootexperimenting.entities.Tweet
 import com.example.springbootexperimenting.models.*
 import com.example.springbootexperimenting.repos.TweetRepository
@@ -15,7 +16,10 @@ class TweetService(private val tweetRepository: TweetRepository) {
 
     @Transactional(readOnly = true)
     fun getTweet(id: Long): TweetResponse {
-        return tweetRepository.findById(id).orElseThrow().toResponse()
+        return tweetRepository
+            .findById(id)
+            .orElseThrow { NotFoundException("Tweet with id $id not found") }
+            .toResponse()
     }
 
     @Transactional

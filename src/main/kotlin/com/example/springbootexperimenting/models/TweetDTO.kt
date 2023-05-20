@@ -1,9 +1,19 @@
 package com.example.springbootexperimenting.models
 
 import com.example.springbootexperimenting.entities.Tweet
+import jakarta.validation.constraints.Max
+import jakarta.validation.constraints.NotBlank
+import jakarta.validation.constraints.NotNull
+
 import java.time.LocalDateTime
 
-data class TweetRequest(val message: String)
+data class TweetRequest(
+    @NotBlank
+    @NotNull
+    @Max(255)
+    val message: String
+)
+
 data class TweetResponse(
     val id: Long,
     val message: String,
