@@ -9,7 +9,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 @SpringBootApplication
 @EnableJpaRepositories
 @EnableJpaAuditing
-@AutoConfiguration
 class SpringBootExperimentingApplication
 
 fun main(args: Array<String>) {

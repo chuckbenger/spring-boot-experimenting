@@ -1,17 +1,17 @@
 package com.example.springbootexperimenting.services
 
+import com.example.springbootexperimenting.controllers.NotFoundException
 import com.example.springbootexperimenting.entities.Tweet
 import com.example.springbootexperimenting.models.TweetRequest
 import com.example.springbootexperimenting.repos.TweetRepository
 import org.assertj.core.api.Assertions.assertThat
+import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.Test
 import org.mockito.ArgumentMatchers.any
 import org.mockito.Mockito
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.boot.test.context.TestConfiguration
 import org.springframework.boot.test.mock.mockito.MockBean
-import org.springframework.context.annotation.Bean
 import java.time.LocalDateTime
 
 
@@ -51,6 +51,17 @@ class TweetServiceTest {
         val tweet = tweetService.getTweet(1)
 
         assertThat(tweet.message).isEqualTo("Hello, world!")
+    }
+
+    @Test
+    fun `getTweet should throw error when not existing`() {
+        Mockito.`when`(tweetRepository.findById(1)).thenReturn(
+            java.util.Optional.empty()
+        )
+
+        assertThatThrownBy { tweetService.getTweet(1) }
+            .isInstanceOf(NotFoundException::class.java)
+            .hasMessageContaining("Tweet with id 1 not found")
     }
 
     @Test
