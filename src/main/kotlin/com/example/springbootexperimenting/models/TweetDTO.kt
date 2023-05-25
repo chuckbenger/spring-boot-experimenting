@@ -25,10 +25,10 @@ data class TweetResponse(
 
 fun Tweet.toResponse(): TweetResponse {
     return TweetResponse(
-        id = this.id!!,
-        message = this.message,
-        upVotes = this.upVotes,
-        downVotes = this.downVotes,
-        createdAt = this.createdAt!!
+        id = id!!,
+        message = message,
+        upVotes = upVotes,
+        downVotes = downVotes,
+        createdAt = createdAt!!
     )
 }

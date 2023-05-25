@@ -1,3 +1,11 @@
 databaseChangeLog:
   - include:
-        file: classpath:db/changelog/1_add_tweet_table.yaml
+      file: classpath:db/changelog/1_add_tweet_table.yaml
+  - include:
+      file: classpath:db/changelog/2_add_users_table.yaml
+  - include:
+      file: classpath:db/changelog/3_add_user_id_to_tweets.yaml
+  - include:
+      file: classpath:db/changelog/4_add_constraints.yaml
+  - include:
+      file: classpath:db/changelog/5_add_more_constraints.yaml

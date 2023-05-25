@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: chuck
+      changes:
+        - addColumn:
+            tableName: tweet
+            columns:
+              - column:
+                  name: user_id
+                  type: int
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: tweet
+            baseColumnNames: user_id
+            constraintName: tweet_user_id_fk
+            referencedTableName: user
+            referencedColumnNames: id

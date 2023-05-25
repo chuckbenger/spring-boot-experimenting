@@ -7,20 +7,20 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener
 import java.time.LocalDateTime
 
 @Entity
+@Table(name = "\"user\"")
 @EntityListeners(AuditingEntityListener::class)
-class Tweet(
-    @Column(nullable = false)
-    val message: String,
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
-    val user: User,
+class User(
+    @Column(nullable = false, unique = true)
+    val username: String,
 
     @Column(nullable = false)
-    val upVotes: Int = 0,
+    val password: String,
 
     @Column(nullable = false)
-    val downVotes: Int = 0,
+    val email: String,
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    val tweets: MutableList<Tweet> = mutableListOf(),
 
     @CreatedDate
     @Column(nullable = false, updatable = false)
@@ -32,5 +32,5 @@ class Tweet(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long? = null,
+    var id: Long? = null
 )
