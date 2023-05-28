@@ -2,6 +2,7 @@ package com.example.springbootexperimenting.repos
 
 import com.example.springbootexperimenting.config.LiquibaseConfiguration
 import com.example.springbootexperimenting.entities.Tweet
+import com.example.springbootexperimenting.entities.User
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -23,7 +24,8 @@ class TweetRepositoryTest {
 
     @Test
     fun `can create and find book`() {
-        entityManager.persist(Tweet(message = "message"))
+        val user = entityManager.persist(User(username = "user", password = "password", email = "test@test.com"))
+        entityManager.persist(Tweet(message = "message", user = user))
 
         val tweet = tweetRepository.findById(1L).get()
 

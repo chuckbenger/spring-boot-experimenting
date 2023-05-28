@@ -2,8 +2,10 @@ package com.example.springbootexperimenting.services
 
 import com.example.springbootexperimenting.controllers.NotFoundException
 import com.example.springbootexperimenting.entities.Tweet
+import com.example.springbootexperimenting.entities.User
 import com.example.springbootexperimenting.models.TweetRequest
 import com.example.springbootexperimenting.repos.TweetRepository
+import com.example.springbootexperimenting.repos.UserRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.Test
@@ -24,12 +26,20 @@ class TweetServiceTest {
     @MockBean
     private lateinit var tweetRepository: TweetRepository
 
+    @MockBean
+    private lateinit var userRepository: UserRepository
+
+    @MockBean
+    private lateinit var userService: UserService
+
+    private val testUser = User(id = 1, username = "user", password = "password", email = "test@test.com")
+
     @Test
     fun `getTweets should return a list of tweets`() {
         Mockito.`when`(tweetRepository.findAll()).thenReturn(
             listOf(
-                Tweet(id = 1, message = "Hello, world!", createdAt = LocalDateTime.now()),
-                Tweet(id = 2, message = "Hello, world Again", createdAt = LocalDateTime.now()),
+                Tweet(id = 1, message = "Hello, world!", createdAt = LocalDateTime.now(), user = testUser),
+                Tweet(id = 2, message = "Hello, world Again", createdAt = LocalDateTime.now(), user = testUser),
             )
         )
 
@@ -44,7 +54,7 @@ class TweetServiceTest {
     fun `getTweet should return a tweet`() {
         Mockito.`when`(tweetRepository.findById(1)).thenReturn(
             java.util.Optional.of(
-                Tweet(id = 1, message = "Hello, world!", createdAt = LocalDateTime.now()),
+                Tweet(id = 1, message = "Hello, world!", createdAt = LocalDateTime.now(), user = testUser)
             )
         )
 
@@ -67,8 +77,9 @@ class TweetServiceTest {
     @Test
     fun `createTweet should return a tweet`() {
         Mockito.`when`(tweetRepository.save(any())).thenReturn(
-            Tweet(id = 1, message = "Hello, world!", createdAt = LocalDateTime.now()),
+            Tweet(id = 1, message = "Hello, world!", createdAt = LocalDateTime.now(), user = testUser),
         )
+        Mockito.`when`(userService.getCurrentUser()).thenReturn(testUser)
 
         val tweet = tweetService.createTweet(TweetRequest(message = "Hello, world!"))
 
