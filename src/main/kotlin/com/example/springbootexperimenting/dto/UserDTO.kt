@@ -1,4 +1,4 @@
-package com.example.springbootexperimenting.models
+package com.example.springbootexperimenting.dto
 
 import com.example.springbootexperimenting.entities.User
 

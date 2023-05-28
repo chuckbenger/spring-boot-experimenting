@@ -1,4 +1,4 @@
-package com.example.springbootexperimenting.repos
+package com.example.springbootexperimenting.repository
 
 import com.example.springbootexperimenting.config.LiquibaseConfiguration
 import com.example.springbootexperimenting.entities.Tweet

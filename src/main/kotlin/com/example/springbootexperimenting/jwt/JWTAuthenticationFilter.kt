@@ -1,6 +1,6 @@
 package com.example.springbootexperimenting.jwt
 
-import com.example.springbootexperimenting.services.UserDetailsService
+import com.example.springbootexperimenting.service.UserDetailsService
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse

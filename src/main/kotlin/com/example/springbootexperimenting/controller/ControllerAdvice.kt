@@ -1,4 +1,4 @@
-package com.example.springbootexperimenting.controllers
+package com.example.springbootexperimenting.controller
 
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity

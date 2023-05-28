@@ -1,4 +1,4 @@
-package com.example.springbootexperimenting.repos
+package com.example.springbootexperimenting.repository
 
 import com.example.springbootexperimenting.entities.User
 import org.springframework.data.repository.CrudRepository

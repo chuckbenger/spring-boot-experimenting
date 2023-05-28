@@ -1,6 +1,6 @@
 package com.example.springbootexperimenting.config
 
-import com.example.springbootexperimenting.services.UserDetailsService
+import com.example.springbootexperimenting.service.UserDetailsService
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.authentication.AuthenticationManager

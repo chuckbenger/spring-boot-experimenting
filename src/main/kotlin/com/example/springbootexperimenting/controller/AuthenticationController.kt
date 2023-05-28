@@ -1,8 +1,8 @@
-package com.example.springbootexperimenting.controllers
+package com.example.springbootexperimenting.controller
 
 import com.example.springbootexperimenting.entities.User
-import com.example.springbootexperimenting.models.*
-import com.example.springbootexperimenting.services.UserService
+import com.example.springbootexperimenting.dto.*
+import com.example.springbootexperimenting.service.UserService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping

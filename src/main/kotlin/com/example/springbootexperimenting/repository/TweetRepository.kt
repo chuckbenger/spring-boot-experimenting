@@ -1,4 +1,4 @@
-package com.example.springbootexperimenting.repos
+package com.example.springbootexperimenting.repository
 
 import com.example.springbootexperimenting.entities.Tweet
 import org.springframework.data.jpa.repository.JpaRepository

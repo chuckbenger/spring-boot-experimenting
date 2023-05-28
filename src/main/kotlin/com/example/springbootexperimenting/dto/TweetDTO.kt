@@ -1,9 +1,6 @@
-package com.example.springbootexperimenting.models
+package com.example.springbootexperimenting.dto
 
 import com.example.springbootexperimenting.entities.Tweet
-import jakarta.validation.constraints.Max
-import jakarta.validation.constraints.Min
-import jakarta.validation.constraints.NotBlank
 import jakarta.validation.constraints.NotNull
 import jakarta.validation.constraints.Size
 

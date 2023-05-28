@@ -1,6 +1,6 @@
-package com.example.springbootexperimenting.services
+package com.example.springbootexperimenting.service
 
-import com.example.springbootexperimenting.repos.UserRepository
+import com.example.springbootexperimenting.repository.UserRepository
 import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService

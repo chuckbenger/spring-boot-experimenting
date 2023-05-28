@@ -1,7 +1,7 @@
-package com.example.springbootexperimenting.controllers
+package com.example.springbootexperimenting.controller
 
-import com.example.springbootexperimenting.models.TweetResponse
-import com.example.springbootexperimenting.services.TweetService
+import com.example.springbootexperimenting.dto.TweetResponse
+import com.example.springbootexperimenting.service.TweetService
 import org.junit.jupiter.api.Test
 import org.mockito.Mockito
 import org.mockito.kotlin.anyOrNull

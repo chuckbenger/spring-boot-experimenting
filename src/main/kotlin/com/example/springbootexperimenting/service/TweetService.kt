@@ -1,13 +1,10 @@
-package com.example.springbootexperimenting.services
+package com.example.springbootexperimenting.service
 
-import com.example.springbootexperimenting.controllers.NotFoundException
+import com.example.springbootexperimenting.controller.NotFoundException
 import com.example.springbootexperimenting.entities.Tweet
-import com.example.springbootexperimenting.models.*
-import com.example.springbootexperimenting.repos.TweetRepository
-import org.hibernate.validator.internal.util.Contracts
+import com.example.springbootexperimenting.dto.*
+import com.example.springbootexperimenting.repository.TweetRepository
 import org.slf4j.LoggerFactory
-import org.springframework.security.authentication.AuthenticationManager
-import org.springframework.security.authentication.AuthenticationProvider
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 

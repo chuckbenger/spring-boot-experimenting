@@ -1,3 +1,3 @@
-package com.example.springbootexperimenting.controllers
+package com.example.springbootexperimenting.controller
 
 class NotFoundException(message: String) : RuntimeException(message)

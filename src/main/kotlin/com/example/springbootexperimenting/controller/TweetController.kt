@@ -1,8 +1,8 @@
-package com.example.springbootexperimenting.controllers
+package com.example.springbootexperimenting.controller
 
-import com.example.springbootexperimenting.models.TweetRequest
-import com.example.springbootexperimenting.models.TweetResponse
-import com.example.springbootexperimenting.services.TweetService
+import com.example.springbootexperimenting.dto.TweetRequest
+import com.example.springbootexperimenting.dto.TweetResponse
+import com.example.springbootexperimenting.service.TweetService
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity

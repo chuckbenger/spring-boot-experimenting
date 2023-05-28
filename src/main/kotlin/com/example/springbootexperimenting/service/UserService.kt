@@ -1,11 +1,11 @@
-package com.example.springbootexperimenting.services
+package com.example.springbootexperimenting.service
 
 import com.example.springbootexperimenting.entities.User
 import com.example.springbootexperimenting.jwt.JWTUtil
-import com.example.springbootexperimenting.models.LoginResponse
-import com.example.springbootexperimenting.models.LoginUser
-import com.example.springbootexperimenting.models.RegisterUser
-import com.example.springbootexperimenting.repos.UserRepository
+import com.example.springbootexperimenting.dto.LoginResponse
+import com.example.springbootexperimenting.dto.LoginUser
+import com.example.springbootexperimenting.dto.RegisterUser
+import com.example.springbootexperimenting.repository.UserRepository
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.context.SecurityContextHolder

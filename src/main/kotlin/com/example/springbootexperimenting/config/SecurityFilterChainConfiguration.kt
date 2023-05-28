@@ -1,7 +1,6 @@
 package com.example.springbootexperimenting.config
 
 import com.example.springbootexperimenting.jwt.JWTAuthenticationFilter
-import com.example.springbootexperimenting.jwt.JWTUtil
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.HttpMethod

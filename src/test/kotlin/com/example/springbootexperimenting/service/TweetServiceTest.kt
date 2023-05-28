@@ -1,11 +1,11 @@
-package com.example.springbootexperimenting.services
+package com.example.springbootexperimenting.service
 
-import com.example.springbootexperimenting.controllers.NotFoundException
+import com.example.springbootexperimenting.controller.NotFoundException
 import com.example.springbootexperimenting.entities.Tweet
 import com.example.springbootexperimenting.entities.User
-import com.example.springbootexperimenting.models.TweetRequest
-import com.example.springbootexperimenting.repos.TweetRepository
-import com.example.springbootexperimenting.repos.UserRepository
+import com.example.springbootexperimenting.dto.TweetRequest
+import com.example.springbootexperimenting.repository.TweetRepository
+import com.example.springbootexperimenting.repository.UserRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.Test
