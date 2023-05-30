@@ -2,6 +2,7 @@
 FROM maven:3.8.2-openjdk-17 as build
 
 COPY src /home/app/src
+COPY frontend /home/app/frontend
 COPY pom.xml /home/app
 RUN mvn -f /home/app/pom.xml clean package -DskipTests
 

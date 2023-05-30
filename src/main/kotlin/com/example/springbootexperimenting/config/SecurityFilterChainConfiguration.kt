@@ -22,6 +22,7 @@ class SecurityFilterChainConfiguration(
         return http.csrf {
             it.disable()
         }.authorizeHttpRequests {
+            it.requestMatchers(HttpMethod.GET).permitAll()
             it.requestMatchers(HttpMethod.GET, "/api/tweets/**").permitAll()
             it.requestMatchers(HttpMethod.POST, "/api/auth/**").permitAll()
             it.requestMatchers(HttpMethod.POST, "/api/tweets/**").authenticated()
